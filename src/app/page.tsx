@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FeatureGrid from "@/components/FeatureGrid";
+import FAQSection from "@/components/FAQSection";
 export default function Home() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-16">
@@ -31,6 +32,7 @@ export default function Home() {
       </section>
       {/* How it works */}
       <FeatureGrid />
+      <FAQSection />
     </main>
   );
 }
