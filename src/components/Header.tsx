@@ -8,11 +8,18 @@ export default function Header() {
           Odd Jobs
         </Link>
 
-        <div className="flex gap-6">
-          <Link href="/request-help" className="hover:underline">
+        <div className="flex items-center gap-2">
+          <Link
+            href="/request-help"
+            className="rounded-md px-3 py-2 hover:bg-gray-100 transition"
+          >
             Request help
           </Link>
-          <Link href="/become-a-worker" className="hover:underline">
+
+          <Link
+            href="/become-a-worker"
+            className="rounded-md px-3 py-2 hover:bg-gray-100 transition"
+          >
             Become a worker
           </Link>
         </div>
@@ -20,3 +27,5 @@ export default function Header() {
     </header>
   );
 }
+
+
