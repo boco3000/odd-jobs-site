@@ -1,13 +1,25 @@
 import Link from "next/link";
+import Image from "next/image";
 import NavLink from "@/components/NavLink";
 
 export default function Header() {
   return (
     <header className="border-b">
       <nav className="mx-auto flex max-w-6xl items-center justify-between p-4">
-        <Link href="/" className="text-xl font-bold">
-          Odd Jobs
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link href="/" aria-label="Odd Jobs home">
+            <Image
+              src="/logo.png"
+              alt="Odd Jobs logo"
+              width={28}
+              height={28}
+              className="rounded-sm hover:opacity-90 transition"
+              priority
+            />
+          </Link>
+
+          <span className="hidden sm:inline text-xl font-bold">Odd Jobs</span>
+        </div>
 
         <div className="flex items-center gap-2">
           <NavLink href="/request-help">Request help</NavLink>
