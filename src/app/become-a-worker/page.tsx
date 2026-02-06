@@ -295,8 +295,8 @@ export default function BecomeAWorkerPage() {
             value={form.location}
             onChange={(e) => updateField("location", e.target.value)}
             onBlur={() => setTouched((prev) => ({ ...prev, location: true }))}
-            placeholder="Bo Cochran"
-            autoComplete="Williamsburg, Brooklyn"
+            placeholder="Williamsburg, Brooklyn"
+            autoComplete="location"
             aria-invalid={!!(errors.location ?? serverFieldErrors.location)}
             aria-describedby={
               (errors.location ?? serverFieldErrors.location)
