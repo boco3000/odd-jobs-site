@@ -7,7 +7,7 @@ export default function Home() {
       {/* Hero section */}
       <section className="text-center">
         <h1 className="text-5xl font-bold tracking-tight">
-          Odd Jobs NY
+          Odd Jobs
         </h1>
 
         <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
