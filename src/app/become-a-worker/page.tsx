@@ -38,16 +38,20 @@ export default function BecomeAWorkerPage() {
   >({});
   const [submittedOnce, setSubmittedOnce] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
 
   function updateField<K extends keyof WorkerFormState>(
     key: K,
     value: WorkerFormState[K],
   ) {
+    setServerError(null);
     setSubmitted(false);
     setForm((prev) => ({ ...prev, [key]: value }));
   }
 
   function toggleSkill(skill: string) {
+    setServerError(null);
     setSubmitted(false);
     setTouched((prev) => ({ ...prev, skills: true }));
 
@@ -86,30 +90,47 @@ export default function BecomeAWorkerPage() {
     return submittedOnce || touched[field];
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSubmittedOnce(true);
+    setServerError(null);
 
     const currentErrors = validate(form);
-    if (Object.keys(currentErrors).length > 0) {
-      return;
+    if (Object.keys(currentErrors).length > 0) return;
+
+    try {
+      setIsSubmitting(true);
+
+      const res = await fetch("/api/worker-application", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        setServerError(body?.error ?? "Submission failed. Please try again.");
+        return;
+      }
+
+      setSubmitted(true);
+
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        location: "",
+        availability: "",
+        note: "",
+        skills: [],
+      });
+      setTouched({});
+      setSubmittedOnce(false);
+    } catch {
+      setServerError("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    console.log("Worker application submitted:", form);
-
-    setSubmitted(true);
-
-    setForm({
-      name: "",
-      email: "",
-      phone: "",
-      location: "",
-      availability: "",
-      note: "",
-      skills: [],
-    });
-    setTouched({});
-    setSubmittedOnce(false);
   }
 
   return (
@@ -126,6 +147,12 @@ export default function BecomeAWorkerPage() {
           <p className="mt-1 text-sm">
             Thanks — we&apos;ll reach out soon if it&apos;s a fit.
           </p>
+        </div>
+      )}
+
+      {serverError && (
+        <div className="mb-8 rounded-md border border-red-600 bg-red-50 p-4 text-red-800 dark:border-red-500 dark:bg-red-900/30 dark:text-red-200">
+          {serverError}
         </div>
       )}
 
@@ -280,9 +307,10 @@ export default function BecomeAWorkerPage() {
 
         <button
           type="submit"
-          className="w-full rounded-md bg-black px-6 py-3 text-white font-medium transition hover:bg-gray-800"
+          disabled={isSubmitting}
+          className="w-full rounded-md bg-black px-6 py-3 text-white font-medium transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          Submit application
+          {isSubmitting ? "Submitting..." : "Submit application"}
         </button>
       </form>
     </main>
