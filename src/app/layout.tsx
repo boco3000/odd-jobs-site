@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Odd Jobs — Reliable NYC Gig Help",
+  title: "OddJobs New York — Reliable NYC Gig Help",
   description:
-    "Odd Jobs connects New Yorkers with fast, high-quality help for everyday tasks.",
+    "OddJobs New York connects New Yorkers with fast, high-quality help for everyday tasks.",
   other: {
-    "apple-itunes-app": "app-id=1515838366",
+    "apple-itunes-app": "app-id=6739154599",
   },
 };
 
