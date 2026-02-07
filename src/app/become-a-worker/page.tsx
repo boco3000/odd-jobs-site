@@ -161,7 +161,7 @@ export default function BecomeAWorkerPage() {
     <main className="mx-auto max-w-2xl px-6 py-16">
       <h1 className="text-4xl font-bold tracking-tight">Become a worker</h1>
       <p className="mt-4 text-gray-600 dark:text-gray-300">
-        Apply to work with Odd Jobs in NYC. This is a demo form (no backend
+        Apply to work with OddJobs New York. This is a demo form (no backend
         yet).
       </p>
 
