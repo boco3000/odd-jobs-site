@@ -12,9 +12,9 @@ const FAQS = [
       "Yes. We focus on quality and reliability, and every worker is reviewed before being accepted.",
   },
   {
-    question: "Is Odd Jobs only available in NYC?",
+    question: "Is OddJobs New York only available in NYC?",
     answer:
-      "Yes. Odd Jobs is built specifically for New York City to ensure speed and local expertise.",
+      "Yes. OddJobs New York is built specifically for New York City to ensure speed and local expertise.",
   },
 ] as const;
 

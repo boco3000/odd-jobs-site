@@ -7,7 +7,7 @@ const FEATURES = [
   },
   {
     title: "Get matched",
-    description: "We connect you with a reliable, vetted Odd Jobs worker.",
+    description: "We connect you with a reliable, vetted OddJobs worker.",
   },
   {
     title: "Get it done",
