@@ -21,13 +21,12 @@ export default function Header() {
           <span className="hidden sm:inline text-xl font-bold">OddJobs NY</span>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="hidden sm:flex items-center gap-2">
           <NavLink href="/request-help">Request help</NavLink>
           <NavLink href="/become-a-worker">Become a worker</NavLink>
-
           <NavLink href="/case-study">Case study</NavLink>
-
-          <a
+        </div>
+        <a
             href="https://apps.apple.com/us/app/oddjobs-new-york/id6739154599"
             target="_blank"
             rel="noopener noreferrer"
@@ -35,7 +34,6 @@ export default function Header() {
           >
             Get the app <span aria-hidden="true">↗</span>
           </a>
-        </div>
       </nav>
     </header>
   );
