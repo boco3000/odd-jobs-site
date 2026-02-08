@@ -25,6 +25,8 @@ export default function Header() {
           <NavLink href="/request-help">Request help</NavLink>
           <NavLink href="/become-a-worker">Become a worker</NavLink>
 
+          <NavLink href="/case-study">Case study</NavLink>
+
           <a
             href="https://apps.apple.com/us/app/oddjobs-new-york/id6739154599"
             target="_blank"
