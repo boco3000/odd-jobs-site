@@ -146,10 +146,10 @@ If this were a real consumer-facing product, next steps would include:
 ---
 
 ## Running Locally
-``bash
-npm instal
-npmp run dev
-Open http://localhost:3000 in your browser.
+- ``bash
+- npm instal
+- npmp run dev
+- Open http://localhost:3000 in your browser.
 
 ### Notes
 
