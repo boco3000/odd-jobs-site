@@ -1,0 +1,46 @@
+{
+  "requestHelp": [
+    {
+      "id": "rh_001",
+      "name": "Avery Kim",
+      "email": "avery@example.com",
+      "location": "Williamsburg, Brooklyn",
+      "task": "Assemble an IKEA dresser and mount a mirror.",
+      "when": "This weekend",
+      "receivedAt": "2026-02-06T18:20:00.000Z"
+    },
+    {
+      "id": "rh_002",
+      "name": "Jordan Lee",
+      "email": "jordan@example.com",
+      "location": "Upper West Side, Manhattan",
+      "task": "Moving help: load boxes into a U-Haul.",
+      "when": "Tomorrow after 5pm",
+      "receivedAt": "2026-02-06T21:05:00.000Z"
+    }
+  ],
+  "workerApplications": [
+    {
+      "id": "wa_001",
+      "name": "Sam Rivera",
+      "email": "sam@example.com",
+      "phone": "9175551234",
+      "location": "Astoria, Queens",
+      "availability": "Weeknights + Saturdays",
+      "skills": ["Moving help", "Furniture assembly"],
+      "note": "Have tools + a hand truck.",
+      "receivedAt": "2026-02-06T19:40:00.000Z"
+    },
+    {
+      "id": "wa_002",
+      "name": "Taylor Chen",
+      "email": "taylor@example.com",
+      "phone": "6465558899",
+      "location": "Park Slope, Brooklyn",
+      "availability": "Weekends",
+      "skills": ["Cleaning", "Errands"],
+      "note": "",
+      "receivedAt": "2026-02-06T22:15:00.000Z"
+    }
+  ]
+}

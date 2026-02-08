@@ -7,6 +7,12 @@ export default function CaseStudyPage() {
         portfolio project.
       </p>
 
+      <p className="mt-4">
+        <a href="/submissions" className="underline">
+          View demo submissions
+        </a>
+      </p>
+
       <section className="mt-12 space-y-4">
         <h2 className="text-2xl font-semibold">Goal</h2>
         <p className="text-gray-700 dark:text-gray-200">
